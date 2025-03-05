@@ -1,6 +1,6 @@
 ---
 - name: Gather Linux Server Information
-  hosts: linux_servers
+  hosts: localhost
   gather_facts: yes
   tasks:
     - name: Display Operating System
