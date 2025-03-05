@@ -1,0 +1,24 @@
+---
+- name: Gather Linux Server Information
+  hosts: linux_servers
+  gather_facts: yes
+  tasks:
+    - name: Display Operating System
+      debug:
+        msg: "Operating System: {{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+    - name: Display Hostname
+      debug:
+        msg: "Hostname: {{ ansible_hostname }}"
+
+    - name: Display Total Memory
+      debug:
+        msg: "Total Memory: {{ ansible_memtotal_mb }} MB"
+
+    - name: Display CPU Cores
+      debug:
+        msg: "CPU Cores: {{ ansible_processor_cores }}"
+
+    - name: Display IP Address
+      debug:
+        msg: "IP Address: {{ ansible_default_ipv4.address }}"
